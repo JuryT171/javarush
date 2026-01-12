@@ -7,8 +7,8 @@ package com.javarush.task.pro.task05.task0509;
 public class Solution {
 
     public static int[][] MULTIPLICATION_TABLE;
-    static int x = 10;
-    static int y = 11;
+    static int x = 17;
+    static int y = 21;
 
     public static void main(String[] args) {
         //напишите тут ваш код

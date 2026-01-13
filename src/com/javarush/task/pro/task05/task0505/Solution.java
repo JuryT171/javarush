@@ -18,21 +18,17 @@ public class Solution {
         for (int i = 0; i < array.length; i++) {  //  принимаем числа на ввод, колличество меньше длины массива
             array[i] = scanner.nextInt();
         }
-
         // Проверяем, является ли число N четным.
 
         if (N % 2 == 0) {   // если число четное
             // выводим элементы массива в обратном порядке.
             // Цикл for начинается с конца и идет до первого (реверс).
-
             for (int reverse = ((array.length) - 1); reverse >= 0; reverse--) // счетчик реверса, начинаем с конца
             {
                 System.out.println(array[reverse] + " "); // выводим на экран числа с конца е
             }
         } else {
             // Если N нечетное, выводим элементы массива попорядку
-
-
             for (int straight = 0; straight < array.length; straight++) { // если длина массива N нечетная выводим попорядку
                 System.out.println(array[straight] + " ");
             }

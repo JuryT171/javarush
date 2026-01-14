@@ -13,7 +13,7 @@ public class Solution {
         //напишите тут ваш код
         Scanner scanner = new Scanner(System.in);
         int min = Integer.MAX_VALUE;
-        int[] row_sum = new int[array.length];
+        int[] row_sum = new int[array.length];  // переменные для нахождения минимума по стоблцам и рядам
         int[] col_sum = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
@@ -22,11 +22,11 @@ public class Solution {
                 row_sum[i] = row_sum[i] + array[i][j];   //  row_sum[i] += array[i][j];
             }
             if (row_sum[i] < min)
-                min = row_sum[i];
+                min = row_sum[i];   //  находим минимум в рядах
         }
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                col_sum[j] = col_sum[j] + array[i][j];
+                col_sum[j] = col_sum[j] + array[i][j];  // находим минимум в стоблцах
             if (col_sum[j] < min){
                 min = col_sum[j];}
             }

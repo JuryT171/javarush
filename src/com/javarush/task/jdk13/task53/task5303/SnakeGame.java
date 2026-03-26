@@ -11,7 +11,7 @@ public class SnakeGame extends Game {
     private Apple apple ;
     private boolean isGameStopped;
     private int score;
-
+//
     @Override
     public void initialize() {    // переопределили метод
         setScreenSize(WIDTH,HEIGHT);

@@ -12,5 +12,5 @@ public class GameObject {
         this.y = y;
         this.isMine = isMine;
     }
-}
+}//
 

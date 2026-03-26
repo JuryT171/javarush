@@ -11,7 +11,7 @@ public class Snake {
     public boolean isAlive = true;
     private List<GameObject> snakeParts = new ArrayList<>(); //  создали аррайлист для хранения змейки
     private Direction direction = Direction.LEFT; //  поле с началом движения влево
-
+//
 
     public Snake(int x, int y) {
         GameObject gameObjectFirst = new GameObject(x, y);  //  сконструировали с помощью параметров три обьекта

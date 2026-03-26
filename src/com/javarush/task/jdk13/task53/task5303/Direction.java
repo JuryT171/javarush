@@ -6,3 +6,4 @@ public enum Direction {  //  енум класс для хранения нап�
     DOWN,
     LEFT
 }
+//

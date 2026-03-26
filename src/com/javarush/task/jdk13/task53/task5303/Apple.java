@@ -12,4 +12,4 @@ public class Apple extends GameObject{  //  класс наследник GameOb
     public void draw(Game game) {  //  метод для закрашивания ячейки с яблоком
         game.setCellValueEx(x,y,Color.NONE,APPLE_SIGN,Color.GREEN,75);
     }
-}
+}//

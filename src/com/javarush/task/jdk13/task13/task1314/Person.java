@@ -1,7 +1,5 @@
 package com.javarush.task.jdk13.task13.task1314;
 
-import static com.javarush.task.pro.task09.task0904.Solution.second;
-
 public class Person implements RepkaItem {
     private String name;
     private String namePadezh;
@@ -9,6 +7,10 @@ public class Person implements RepkaItem {
     public Person(String name, String namePadezh) {
         this.name = name;
         this.namePadezh = namePadezh;
+    }
+
+    public void pull(Person second) {
+        System.out.println(name + " за " + second.getNamePadezh());
     }
 
     public String getName() {
@@ -25,9 +27,5 @@ public class Person implements RepkaItem {
 
     public void setNamePadezh(String namePadezh) {
         this.namePadezh = namePadezh;
-    }
-
-    public void pull(Person second) {
-        System.out.println(name + " за "+ second.getNamePadezh());
     }
 }

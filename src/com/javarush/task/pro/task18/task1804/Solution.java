@@ -23,9 +23,9 @@ public class Solution {
     }
 
     public static void sortNumbers(ArrayList<Integer> numbers) {
-        Comparator<Integer> comparator = (Integer i1, Integer i2) ->{
-            return i1-i2;
-        };
-        Collections.sort(numbers, comparator);
+        //Comparator<Integer> comparator = (Integer i1, Integer i2) ->{
+          //  return i1-i2;
+      //  };
+        Collections.sort(numbers,( i1, i2)-> i1-i2);  //  лямбда
     }
 }

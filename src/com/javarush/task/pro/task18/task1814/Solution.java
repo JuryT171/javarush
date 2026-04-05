@@ -21,6 +21,6 @@ public class Solution {
 
     public static Stream<String> getDistinctWords(ArrayList<String> words) {
         //напишите тут ваш код
-        return words.stream().distinct();
+        return words.stream().distinct(); //  получаем поток, фильтруем от повторений
     }
 }

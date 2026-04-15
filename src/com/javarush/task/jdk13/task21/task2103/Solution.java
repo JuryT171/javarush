@@ -38,7 +38,7 @@ public class Solution {
         }
         if (anInt != solution1.anInt) {  //  проверка
             return false;
-        }
+        }  // сравниваем все объекты
         if (!Objects.equals(string, solution1.string)) return false;
         if (!Objects.equals(date, solution1.date)) return false;
         if (!Objects.equals(solution, solution1.solution)) return false;

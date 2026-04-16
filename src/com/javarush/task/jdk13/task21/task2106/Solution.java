@@ -1,0 +1,83 @@
+package com.javarush.task.jdk13.task21.task2106;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
+/* 
+Освобождаем ресурсы
+*/
+
+public class Solution {
+    private Connection connection;
+
+    public static void main(String[] args) {
+
+    }
+
+    public Solution(Connection connection) {
+        this.connection = connection;
+    }
+
+    public List<User> getUsers() {
+        String query = "select ID, DISPLAYED_NAME, LEVEL, LESSON from USER";
+
+        List<User> result = new LinkedList();
+
+
+        try (Statement stmt = connection.createStatement(); //  try with resources
+            ResultSet rs = stmt.executeQuery(query)){
+
+            while (rs.next()) {  // проходимся по всем строкам
+                int id = rs.getInt("ID");
+                String name = rs.getString("DISPLAYED_NAME");
+                int level = rs.getInt("LEVEL");
+                int lesson = rs.getInt("LESSON");
+
+                result.add(new User(id, name, level, lesson));  //  создаем объект и добавляем его в лист
+            }
+        }
+                catch (SQLException e) {
+                e.printStackTrace();
+                return null;
+                }
+            return result;
+            }
+
+    @Override
+    protected void finalize() throws Throwable {
+            super.finalize();
+
+            if (connection != null ) {  //  проверяем закрытие соединения
+                connection.close();
+            }
+        }
+
+
+    public static class User {
+        private int id;
+        private String name;
+        private int level;
+        private int lesson;
+
+        public User(int id, String name, int level, int lesson) {
+            this.id = id;
+            this.name = name;
+            this.level = level;
+            this.lesson = lesson;
+        }
+
+        @Override
+        public String toString() {
+            return "User{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", level=" + level +
+                    ", lesson=" + lesson +
+                    '}';
+        }
+    }
+}

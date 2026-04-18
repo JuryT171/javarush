@@ -16,7 +16,7 @@ public class Solution {
         this.first = first;
         this.last = last;
     }
-
+    @Override
     public boolean equals(Object o) {
         if (this == o) {  //  если один и тот же обьект то они равны
             return true;

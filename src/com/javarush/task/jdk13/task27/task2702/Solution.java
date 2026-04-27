@@ -21,7 +21,7 @@ public class Solution {
     public synchronized void sout2(Solution solution) {
         System.out.format("222:  %s: %s %n", this.field, solution.getField());
         solution.sout(this);
-    }
+    } //
 
     public static void main(String[] args) {
         final Solution solution = new Solution("first");

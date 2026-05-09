@@ -51,6 +51,9 @@ public class Solution implements Serializable {
             }
             return ourInstance;
         }
+        private Object readResolve(){
+            return ourInstance;
+        }
 
         private Singleton() {
         }

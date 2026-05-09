@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="game-engine">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/game-engine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.13.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-dataformat-xml-2.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-dataformat-yaml-2.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snakeyaml-1.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax2-api-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/woodstox-core-6.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

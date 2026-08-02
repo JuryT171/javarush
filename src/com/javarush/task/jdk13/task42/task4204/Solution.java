@@ -36,6 +36,13 @@ public class Solution {
             int index = i % MAP_SIZE;
             Key key = KEYS.get(index);
 
+            /*
+             Runnable task = () -> {
+                if (MAP.get(key) == key.getIntField())
+                    MAP.put(key, MAP.get(key) * VALUE_MULTIPLIER);
+            };
+             */
+
             Runnable task = () -> {
                 MAP.replace(key, key.getIntField(), MAP.get(key) * VALUE_MULTIPLIER);
             };

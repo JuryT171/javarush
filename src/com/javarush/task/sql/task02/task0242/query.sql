@@ -1,0 +1,7 @@
+-- Write your code here:
+SELECT
+    YEAR(date_of_birth),
+    MONTH(date_of_birth),
+    count(*)
+from employee
+group by YEAR(date_of_birth), MONTH(date_of_birth)

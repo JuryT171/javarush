@@ -1,0 +1,8 @@
+-- Write your code here:
+SELECT
+    YEAR(prod_date) as prod_year,
+    MONTH(prod_date) as prod_month,
+    count(*)
+from cars
+WHERE name = 'Black Car' AND price > 99000
+group by prod_year, prod_month

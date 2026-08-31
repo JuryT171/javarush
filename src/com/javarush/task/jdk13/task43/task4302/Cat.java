@@ -1,10 +1,10 @@
 package com.javarush.task.jdk13.task43.task4302;
 
+
+import java.util.Objects;
 /* 
 Сравниваем котов
 */
-
-import org.apache.commons.lang3.builder.*;
 
 public class Cat {
 
@@ -25,13 +25,15 @@ public class Cat {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 
-        return EqualsBuilder.reflectionEquals(this, obj, "name", "weight");
+        Cat cat = (Cat) obj;
+        return age == cat.age && Objects.equals(breed, cat.breed);
     }
 
     @Override
-    public int hashCode() {
-        //напишите тут ваш код
 
-        return null;
+    public int hashCode() {
+        int result = age;
+        result = 31 * result + (breed != null ? breed.hashCode() : 0);
+        return result;
     }
 }

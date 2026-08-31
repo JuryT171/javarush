@@ -7,6 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="game-engine" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.20.0" level="project" />
   </component>
 </module>

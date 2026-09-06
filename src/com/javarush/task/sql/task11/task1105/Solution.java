@@ -32,7 +32,7 @@ public class Solution {
             session.persist(animalMouse);
             //напишите тут ваш код
             session.createQuery("delete from Animal where id = 2")
-                    .executeUpdate();
+                    .executeUpdate(); // чтобы изменения сохранились
 
             transaction.commit();
             session.close();

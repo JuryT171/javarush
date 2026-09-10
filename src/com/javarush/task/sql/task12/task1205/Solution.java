@@ -27,7 +27,7 @@ public class Solution {
             audio.setId(1L);
             audio.setFileName("Sound1");
             audio.setAudioFile(getAudioBuffer()); // записываем в поле и превращаем в байты
-            audio.setFileProperties(Map.of("key1", "sound media1"));
+            audio.setFileProperties(Map.of("key1", "sound media1")); // сериализуем map в json
 
             session.beginTransaction(); // запускаем транзакцию
             session.save(audio); // сохраняем файл

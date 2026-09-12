@@ -21,10 +21,13 @@ public class Author {
     private String fullName;
 
     //напишите тут ваш код
-    @ElementCollection
-    @CollectionTable(name="author_achievement",
+    @ElementCollection // говорит о том что это коллекция
+    @CollectionTable(name="author_achievement", // Указывает, в какой таблице хранится коллекция.
+            // создаёт индекс на колонку achievement_index. Полезно для ускорения сортировки и поиска.
             indexes = { @Index(columnList = "achievements_index")},
+            // колонка, по которой таблица связывается с author. Это внешний ключ на author.id.
     joinColumns = @JoinColumn(name = "author_id"))
+    // указывает,в какой колонке хранится само значение элемента коллекции
     @Column(name = "achievement")
     private List<String> achievements;
 

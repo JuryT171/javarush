@@ -21,8 +21,8 @@ public class Author {
     private String fullName;
 
     //напишите тут ваш код
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @OneToMany(cascade = CascadeType.ALL) // // @OneToMany — один автор может иметь много книг.
+    @JoinColumn(name = "author_id") // указывает, что связь идёт через колонку author_id.
     private Set<Book> books;
 
 

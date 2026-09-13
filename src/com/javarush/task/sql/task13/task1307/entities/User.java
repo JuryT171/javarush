@@ -19,8 +19,10 @@ public class User {
     private String fullName;
 
     //напишите тут ваш код
-    @OneToOne(cascade = CascadeType.ALL) //  колонка address_id находится в таблице user
-    @JoinColumn(name = "address_id", referencedColumnName = "id") // referencedColumnName ссылается на колонку id таблицы address
+    @OneToOne(cascade = CascadeType.ALL)
+    //  колонка address_id находится в таблице user
+    // referencedColumnName ссылается на колонку id таблицы address
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     public Integer getId() {

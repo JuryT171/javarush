@@ -15,9 +15,11 @@ public class Book {
     private String title;
 
     //напишите тут ваш код
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="author_book",
+    @ManyToMany(cascade = CascadeType.ALL) // много книг,много авторов
+    @JoinTable(name="author_book", // имя промежуточной таблицы
+            // колонка book_id в промежуточной таблице ссылается на id владельца
             joinColumns=  @JoinColumn(name="book_id", referencedColumnName="id"),
+            // колонка author_id ссылается на id обратной стороны author
             inverseJoinColumns= @JoinColumn(name="author_id", referencedColumnName="id") )
     private Set<Author> authors;
 

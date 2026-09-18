@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "task")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE) // это включает кэш второго уровня для самих сущностей
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Task {
             joinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"))
     @LazyCollection(LazyCollectionOption.EXTRA)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE) // Это включает кэш второго уровня для связанных коллекций
     private List<Employee> employees = new ArrayList<>();
 
     public Integer getId() {

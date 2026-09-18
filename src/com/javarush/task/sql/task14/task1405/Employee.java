@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "employee")
-@Cache (usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cache (usage = CacheConcurrencyStrategy.READ_WRITE) //это включает кэш второго уровня для самих сущностей
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "task_id", referencedColumnName = "id"))
     @LazyCollection(LazyCollectionOption.EXTRA)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE) //это включает кэш второго уровня для связанных коллекций
     private Set<Task> tasks = new HashSet<>();
 
     public Integer getId() {

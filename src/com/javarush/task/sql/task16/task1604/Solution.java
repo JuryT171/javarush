@@ -16,8 +16,10 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         try (Session session = MySessionFactory.getSessionFactory().openSession()) {
             //напишите тут ваш код
-            List<Object[]> list = session.createNativeQuery("select id, title, created_time from project").list();
-            list.forEach(a -> System.out.printf("%s, %s, %s\n", a[0], a[1], a[2]));
+            List<Object[]> rows = // Создаём NativeQuery и sql запрос
+                    session.createNativeQuery("select id, title, created_time from project").list();
+            // вывод на экран
+            rows.forEach(a -> System.out.printf("%s, %s, %s\n", a[0], a[1], a[2]));
         }
     }
 }
